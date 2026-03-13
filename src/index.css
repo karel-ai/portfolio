@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+@theme {
+  --color-dark-bg: #050505;
+  --color-dark-card: #0D0D0D;
+  --color-pink-accent: #FF2D95;
+  --color-gold-accent: #D4AF37;
+
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-slate-300 font-inter antialiased selection:bg-pink-accent/30;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-outfit text-white tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-dark-card/50 backdrop-blur-xl border border-white/10 shadow-[0_0_20px_rgba(255,45,149,0.05)];
+  }
+
+  .glass-hover {
+    @apply hover:bg-dark-card/80 hover:border-pink-accent/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,45,149,0.1)];
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-accent via-[#FF69B4] to-gold-accent;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.dark.bg');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.slate.700');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.slate.600');
+}
