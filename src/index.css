@@ -1,59 +1,67 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
 
 @theme {
-  --color-dark-bg: #050505;
-  --color-dark-card: #0D0D0D;
-  --color-pink-accent: #FF2D95;
-  --color-gold-accent: #D4AF37;
+  --color-primary-rose: #E5B5A3;
+  --color-accent-gold: #B76E79;
+  --color-bg-sand: #F9F5F2;
+  --color-text-anthracite: #3D3535;
+  --color-glow-sun: #FFF9F0;
 
-  --font-inter: 'Inter', sans-serif;
-  --font-outfit: 'Outfit', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 @layer base {
   body {
-    @apply bg-dark-bg text-slate-300 font-inter antialiased selection:bg-pink-accent/30;
+    @apply bg-bg-sand text-text-anthracite font-sans antialiased selection:bg-primary-rose/30;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-outfit text-white tracking-tight;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-text-anthracite tracking-tight;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-dark-card/50 backdrop-blur-xl border border-white/10 shadow-[0_0_20px_rgba(255,45,149,0.05)];
+    @apply bg-white/40 backdrop-blur-[10px] border border-white/20 shadow-[0_8px_32px_0_rgba(183,110,121,0.08)];
   }
 
   .glass-hover {
-    @apply hover:bg-dark-card/80 hover:border-pink-accent/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,45,149,0.1)];
+    @apply hover:bg-white/60 hover:border-accent-gold/20 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(183,110,121,0.15)];
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-accent via-[#FF69B4] to-gold-accent;
+  .rounded-custom {
+    @apply rounded-[24px];
+  }
+
+  .text-gradient-rose {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-gold to-primary-rose;
+  }
+  
+  .bg-gradient-airy {
+    @apply bg-gradient-to-br from-bg-sand to-primary-rose/10;
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Sophisticated */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: theme('colors.dark.bg');
+  background: #F9F5F2;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: theme('colors.slate.700');
-  border-radius: 4px;
+  background: #E5B5A3;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: theme('colors.slate.600');
+  background: #B76E79;
+}
+
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(249, 245, 242, 0.4), rgba(249, 245, 242, 0.8));
 }
