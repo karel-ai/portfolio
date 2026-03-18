@@ -10,7 +10,7 @@ const experiences = [
   {
     id: "circb",
     title: "Cheffe de Projet Junior IA",
-    company: "CIRCB (Centre Chantal Biya)",
+    company: "CIRCB (Centre International de Référence Chantal Biya )",
     period: "Juin 2025 - Septembre 2025",
     description: "Déploiement de LLMs pour l'interprétation des tests de pharmacorésistance du VIH.",
     details: {
